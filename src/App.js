@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Meubotao from "./Componentes/Meubotao"
 
 const Fundo = styled.div `
-background-color:blueviolet
+background-color:blueviolet;
 `
 
 function App() {
@@ -16,12 +16,18 @@ const [numero, setNumero] = useState(0)
 //primeiramente criei a função soma que recebe a função set dentro dela , na qual
 // o numero que é o meu valor guardado, ao ser clicado, será somado +1
 function somar () {
- setNumero (numero + 1)
+   setNumero (numero + 1)
 }
 
 //depois criei a função subtrair que recebe a função set dentro dela , na qual
 // o numero que é o meu valor guardado, ao ser clicado, será subtraído -1
 function diminuir () {
+  //Não permitir que o número fique negativo
+  //Se o valor for 0 não subtraia mais.
+
+  if (numero === 0){
+    return
+  }
  setNumero (numero - 1)
 }
 
